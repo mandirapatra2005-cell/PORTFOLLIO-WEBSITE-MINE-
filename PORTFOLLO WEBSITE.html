@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mandira Patra | Portfolio</title>
+
+  <!-- CSS merged inside -->
+  <style>
+    /* General Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #111; color: #fff; }
+
+    /* Navbar */
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #222; position: fixed; width: 100%; top: 0; }
+    .logo { font-size: 24px; color: #e63946; }
+    .logo span { color: #fff; }
+    .nav-links { list-style: none; display: flex; gap: 20px; }
+    .nav-links a { color: #fff; text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover { color: #e63946; }
+
+    /* Hero */
+    .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #1d3557, #457b9d); }
+    .hero h2 span { color: #e63946; }
+    .btn { background: #e63946; color: #fff; padding: 10px 20px; border-radius: 25px; text-decoration: none; transition: 0.3s; }
+    .btn:hover { background: #fff; color: #e63946; }
+
+    /* Skills */
+    .skills .skill-cards { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+    .card { background: #222; padding: 20px; border-radius: 10px; transition: transform 0.3s; }
+    .card:hover { transform: scale(1.1); background: #e63946; }
+
+    /* Projects */
+    .projects .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .project-card { background: #222; padding: 20px; border-radius: 10px; transition: 0.3s; }
+    .project-card:hover { transform: translateY(-10px); background: #e63946; }
+
+    /* Contact */
+    .contact form { display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: auto; }
+    .contact input, .contact textarea { padding: 10px; border: none; border-radius: 5px; }
+    .contact button { background: #e63946; border: none; padding: 10px; border-radius: 25px; cursor: pointer; }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; background: #222; }
+
+    /* Custom Cursor */
+    .cursor { width: 20px; height: 20px; background: red; border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); transition: transform 0.1s; }
+  </style>
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Mandira <span> Patra</span></h1>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <h2>Hello, I'm <span>Mandira</span></h2>
+    <p>A passionate Web Developer creating stylish & interactive experiences.</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Diploma student in Computer Science & Technology, skilled in HTML, CSS, JavaScript, ReactJS, and GitHub. I love building modern, interactive web apps and portfolios.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skill-cards">
+      <div class="card">HTML5</div>
+      <div class="card">CSS3</div>
+      <div class="card">JavaScript</div>
+      <div class="card">ReactJS</div>
+      <div class="card">Git & GitHub</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Task Manager App</h3>
+        <p>A Trello-inspired task manager with custom cursor & workspace theme.</p>
+        <a href="#" class="btn">Live Demo</a>
+        <a href="#" class="btn">GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Responsive portfolio showcasing my skills & projects.</p>
+        <a href="#" class="btn">Live Demo</a>
+        <a href="#" class="btn">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Mandira Patra | Built with ❤️</p>
+  </footer>
+
+  <!-- JavaScript merged inside -->
+  <script>
+    // Custom Cursor
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
